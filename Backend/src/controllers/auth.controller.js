@@ -1,5 +1,5 @@
 const userModel=require("../models/user.model.js")
-const bcrypt=require("bcrypt")
+const bcrypt=require("bcryptjs")
 const jwt = require("jsonwebtoken");
 const tokenBlacklistModel = require("../models/blacklist.model.js");
 
@@ -44,7 +44,7 @@ async function registerUserController(req,res){
             },
         })
 
-    }catch{error}{
+    }catch(error){
         return res.status(500).json({
             message:"Internal Server Error"
         })
