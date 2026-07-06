@@ -220,9 +220,26 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
         background-color: rgba($accent, 0.05);
     }
 
+    // ── Selected state (file chosen) ─────────────────────────────────────────
+    &--selected {
+        border-style: solid;
+        border-color: #2ea043;
+        background-color: rgba(#2ea043, 0.08);
+
+        &:hover {
+            border-color: #3fb950;
+            background-color: rgba(#3fb950, 0.12);
+        }
+    }
+
     &__icon {
         color: $accent;
         margin-bottom: 0.25rem;
+
+        // Green checkmark icon when file is selected
+        &--success {
+            color: #3fb950;
+        }
     }
 
     &__title {
@@ -230,6 +247,17 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
         font-weight: 500;
         color: $text-primary;
         margin: 0;
+
+        // File name display — truncate long names
+        &--filename {
+            color: #3fb950;
+            font-weight: 600;
+            max-width: 220px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+        }
     }
 
     &__subtitle {
