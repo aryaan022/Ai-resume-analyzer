@@ -15,7 +15,7 @@ const interviewReportGeminiSchema = {
         matchScore: { type: "number", description: "A score between 0 and 100 indicating how well the candidate's profile matches the job description" },
         technicalQuestions: {
             type: "array",
-            description: "Technical questions that can be asked in the interview along with their intention and how to answer them",
+            description: "Technical questions that can be asked in the interview along with their intention and how to answer them also give the follow up question that can be asked in the interview",
             items: {
                 type: "object",
                 properties: {
