@@ -10,9 +10,15 @@ export const AuthProvider = ({children})=>{
 
     useEffect(()=>{ //basically for reloading that user will not redirect to again logic if tokken will be there then onlythe user will stay on home page!
         const getAndSetUser=async()=>{
-            const data = await getMe();
-            setUser(data.user);
-            setLoading(false);
+            try{
+                const data = await getMe();
+                setUser(data.user);
+            }catch(err){
+
+            }finally{
+                setLoading(false);
+            }
+    
         } 
         getAndSetUser();
     },[])
