@@ -74,7 +74,8 @@ export const useInterview = () => {
         }
         catch (error) {
             console.error("PDF download error:", error)
-            alert("Failed to generate PDF. The server may be busy, please try again in a moment.")
+            const message = error?.response?.data?.error || error?.message || "Unknown error"
+            alert(`Failed to generate PDF: ${message}`)
         } finally {
             setLoading(false)
         }
