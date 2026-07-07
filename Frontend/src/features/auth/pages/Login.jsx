@@ -3,7 +3,7 @@ import "../auth.form.scss"
 import{useState} from 'react'
 import { useNavigate,Link } from 'react-router'
 import {useAuth} from '../hooks/useAuth'
-import Spinner from '../../../../components/Spinner.jsx'
+import Spinner from '../../../components/Spinner.jsx'
 
 
 const Login = () => {
